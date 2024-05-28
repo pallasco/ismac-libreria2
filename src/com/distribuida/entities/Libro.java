@@ -19,7 +19,7 @@ public class Libro {
 	private String presentacion;
 	private Double precio;
 	
-	//Repositorio
+	// Jefferson Calapiña 
 	private Categoria categoria;
 	private Autor autor;
 	
