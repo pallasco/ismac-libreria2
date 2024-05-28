@@ -18,6 +18,8 @@ public class Libro {
 	private String portada;
 	private String presentacion;
 	private Double precio;
+	
+	//Repositorio
 	private Categoria categoria;
 	private Autor autor;
 	
