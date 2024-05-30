@@ -28,7 +28,7 @@ public Cliente(int idCliente, String cedula, String nombre, String apellido, Str
 	this.correo = correo;
 }
 
-//metodos getters and stters 
+
 
 public int getIdCliente() {
 	return idCliente;
