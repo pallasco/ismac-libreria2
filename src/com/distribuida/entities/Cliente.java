@@ -29,7 +29,7 @@ public Cliente(int idCliente, String cedula, String nombre, String apellido, Str
 }
 
 
-
+ // getters and setters
 public int getIdCliente() {
 	return idCliente;
 }
