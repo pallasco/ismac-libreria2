@@ -1,5 +1,8 @@
 package com.distribuida.entities;
 
+import org.springframework.stereotype.Component;
+
+@Component
 
 public class Cliente {
 	
@@ -11,8 +14,8 @@ public class Cliente {
 	private String telefono;
 	private String direccion;
 	private String correo;  
-	@SuppressWarnings("unused")
-	private Cliente() {
+	
+	public Cliente() {
 	
    }
 
