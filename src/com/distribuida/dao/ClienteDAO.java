@@ -6,7 +6,7 @@ import antlr.collections.List;
 
 public interface ClienteDAO {
 	
-	// Pragaramación DAO
+	 
 	public List<Cliente>fidAll();
 	
 	public Cliente findOne(int id);
