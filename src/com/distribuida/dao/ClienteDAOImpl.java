@@ -9,10 +9,7 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-
-
 import com.distribuida.entities.Cliente;
-import com.mchange.v1.util.ListUtils;
 
 
 @Repository
@@ -61,6 +58,11 @@ public class ClienteDAOImpl implements ClienteDAO {
 	public void del(int id) {
 		// TODO Auto-generated method stub
 
+	}
+	@Override
+	public List<Cliente> fidAll() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
