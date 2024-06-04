@@ -1,13 +1,14 @@
 package com.distribuida.dao;
 
 import com.distribuida.entities.Cliente;
+import com.mchange.v1.util.ListUtils;
 
 import antlr.collections.List;
 
 public interface ClienteDAO {
 	
 	 
-	public List<Cliente>fidAll();
+	public ListUtils<Cliente>fidAll();
 	
 	public Cliente findOne(int id);
 	public void add(Cliente cliente);
