@@ -1,8 +1,6 @@
 package com.distribuida.entities;
 
-import java.util.Date;
 
-import javax.annotation.Generated;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -115,10 +113,6 @@ public String toString() {
 			+ ", telefono=" + telefono + ", direccion=" + direccion + ", correo=" + correo + "]";
 }
 
-public List<Cliente> findAll() {
-	// TODO Auto-generated method stub
-	return null;
-}
 
 
 

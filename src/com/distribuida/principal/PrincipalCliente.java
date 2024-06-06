@@ -21,7 +21,7 @@ public class PrincipalCliente {
 		System.out.println(item.toString());
 	});
 	
-		
+		context.close();
 		
 	}
 

@@ -16,4 +16,6 @@ public interface ClienteDAO {
 	public void del(int id);
 
 	List<Cliente> findAll();
+
+	
 }
