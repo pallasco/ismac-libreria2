@@ -1,18 +1,38 @@
 package com.distribuida.entities;
 
+import java.util.Date;
+
+import javax.annotation.Generated;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import org.springframework.stereotype.Component;
 
 @Component
-
+@Entity 
+@Table(name="cliente")
 public class Cliente {
 	
 	// atributos
+	@Id 
+	@GeneratedValue(strategy =GenerationType.IDENTITY)
+	@Column(name="id_cliente")
 	private int idCliente;
+	@Column(name="cedula")
 	private String cedula;
+	@Column(name="nombre")
 	private String nombre;
+	@Column(name="apellido")
 	private String apellido;
+	@Column(name="telefono")
 	private String telefono;
+	@Column(name="direccion")
 	private String direccion;
+	@Column(name="correo")
 	private String correo;  
 	
 	public Cliente() {
@@ -93,6 +113,11 @@ public void setCorreo(String correo) {
 public String toString() {
 	return "Cliente [idCliente=" + idCliente + ", cedula=" + cedula + ", nombre=" + nombre + ", apellido=" + apellido
 			+ ", telefono=" + telefono + ", direccion=" + direccion + ", correo=" + correo + "]";
+}
+
+public List<Cliente> findAll() {
+	// TODO Auto-generated method stub
+	return null;
 }
 
 
