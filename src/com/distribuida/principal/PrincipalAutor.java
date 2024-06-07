@@ -11,7 +11,7 @@ public class PrincipalAutor {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-			
+			// Creacion del Class Contex
 		ClassPathXmlApplicationContext context= new ClassPathXmlApplicationContext("ApplicationContext.xml");
 
 		 AutorDAO autorDAO =context.getBean("autorDAOImpl", AutorDAO.class);
