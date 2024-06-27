@@ -8,10 +8,12 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.distribuida.entities.Autor;
 
-public class AutorOlmpl2 implements AutorDAO {
+@Repository
+public class AutorDAOImpl3 implements AutorDAO {
 	
 	// HQL
 	// FINDALL
@@ -47,31 +49,31 @@ public List<Autor> findAll(){
 	}
 @Override
 @Transactional
-public void add(Autor Autor) {
+public void add(Autor autor) {
 		// TODO Auto-generated method stub
 	Session session = sessionFactory.getCurrentSession();
-session.saveOrUpdate("Autor");
+	session.saveOrUpdate(autor);
 	}
 
 @Override
 @Transactional
-	public void up(Autor Autor) {
+	public void up(Autor autor) {
 		// TODO Auto-generated method stub
 	Session session = sessionFactory.getCurrentSession();
-Query query = session.createQuery(" UPDATE Autor au SET au.nombre=: keyNombre"+ 
+Query query = session.createQuery(" UPDATE Autor au SET au.nombre=: keyNombre" + 
 								"            , au.apellido =: keyApellido"
-								+ "             ,au.pais =: keyPais"+
-								"               ,au.direccion =: keyDireccion"+
-								"               ,au.telefono =: keyTelefono"+
-								"                ,aun.correo =. keyCorreo"+
-								"               WHERE au.idAutor =: keyidAutor");
-query.setParameter("keyNombre", Autor.getNombre());
-query.setParameter("keyApellido", Autor.getApellido());
-query.setParameter("keyPais", Autor.getPais());
-query.setParameter("keyDireccion", Autor.getDireccion());
-query.setParameter("keyTelefono", Autor.getTelefono());
-query.setParameter("keyCorreo", Autor.getCorreo());
-query.setParameter("keyIdAutor", Autor.getIdAutor());
+								+ "             ,au.pais =: keyPais" + 
+								"               ,au.direccion =: keyDireccion" + 
+								"               ,au.telefono =: keyTelefono" + 
+								"                ,au.correo =: keyCorreo" + 
+								"               WHERE au.idAutor =: keyIdAutor");
+query.setParameter("keyNombre", autor.getNombre());
+query.setParameter("keyApellido", autor.getApellido());
+query.setParameter("keyPais", autor.getPais());
+query.setParameter("keyDireccion", autor.getDireccion());
+query.setParameter("keyTelefono", autor.getTelefono());
+query.setParameter("keyCorreo", autor.getCorreo());
+query.setParameter("keyIdAutor", autor.getIdAutor());
 
 query.executeUpdate();
 	}
@@ -80,13 +82,12 @@ query.executeUpdate();
 	@Transactional
 	public void del(int id) {
 		// TODO Auto-generated method stub
+Session session = sessionFactory.getCurrentSession();
+Query query = session.createQuery("DELETE FROM Autor au WHERE au idAutor =: keyIdAutor");
+query.setParameter("keyIdAutor", id);
+query.executeUpdate();
 
-	}
-	@Override
-	@Transactional
-	public List<Autor> fidAll() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+}
+	
 
 }
