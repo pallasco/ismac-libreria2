@@ -29,7 +29,7 @@ public class PrincipalFacturadetalle {
 		
 		//Facturadetalle facturadetalle2 = new Facturadetalle(86,2,23.25, null,null);
 		//facturadetalle2.setFactura(facturaDAO.findOne(3));
-		//facturaDAO.up(factura2);
+		//facturadetalleDAO.up(facturadetalle2);
 		
 		//del BORRADO
 		//facturadetalleDAO.del(86);
