@@ -43,7 +43,7 @@ public List<Autor> findAll(){
 	public Autor findOne(int id) {
 		// TODO Auto-generated method stub
 	Session session = sessionFactory.getCurrentSession();
-	Query query = session.createQuery("SELECT au FROM Autor aun WHERE au.idAutor =: keyIdAutor");
+	Query query = session.createQuery("SELECT au FROM Autor au WHERE au.idAutor =: keyIdAutor");
 	query.setParameter("keyIdAutor", id);
 		return (Autor) query.getSingleResult();
 	}

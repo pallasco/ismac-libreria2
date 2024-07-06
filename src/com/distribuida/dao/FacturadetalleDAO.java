@@ -11,7 +11,6 @@ public interface FacturadetalleDAO {
 
 	public List<Facturadetalle>findAll();
 	
-	
 	public Facturadetalle findOne(int id);
 	public void add(Facturadetalle facturadetalle);
 	public void up (Facturadetalle facturadetalle);

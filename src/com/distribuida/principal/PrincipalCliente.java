@@ -22,7 +22,7 @@ public class PrincipalCliente {
 		
 		 // UP actualizacion
 		
-		Cliente cliente2 = new Cliente(42, "05046160532", "Juan","Catota", "09998038762"," Arenal", "juan@gamil.com");
+		Cliente cliente3 = new Cliente(42, "05046160532", "Juan","Catota", "09998038762"," Arenal", "juan@gamil.com");
 		//clienteDAO.up(cliente2);
 		
 		// DEL borrado

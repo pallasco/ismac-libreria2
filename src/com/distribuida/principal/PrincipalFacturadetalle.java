@@ -7,7 +7,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.distribuida.dao.FacturaDAO;
 import com.distribuida.dao.FacturadetalleDAO;
+import com.distribuida.dao.LibroDAO;
 import com.distribuida.entities.Facturadetalle;
+
 
 public class PrincipalFacturadetalle {
 
@@ -20,16 +22,19 @@ public class PrincipalFacturadetalle {
 		FacturadetalleDAO facturadetalleDAO = context.getBean("facturadetalleDAOImpl",FacturadetalleDAO.class);//este en minuscula si no no funciona
 		//CRUD CREEATE READ UPDATE Y DELETE
 		FacturaDAO facturaDAO=context.getBean("facturaDAOImpl",FacturaDAO.class);
+		LibroDAO libroDAO=context.getBean("libroDAOImpl",LibroDAO.class);
 		//add
-		Facturadetalle facturadetalle = new Facturadetalle (0,20,23.25, null,null);
+		Facturadetalle facturadetalle = new Facturadetalle();
 		facturadetalle.setFactura(facturaDAO.findOne(2));
-		facturadetalleDAO.add(facturadetalle);
-		
+		facturadetalle.setLibro(libroDAO.findOne(2));
+	facturadetalleDAO.add(facturadetalle);
+			
 		//UPDATE ACTUALIZADO
 		
-		//Facturadetalle facturadetalle2 = new Facturadetalle(86,2,23.25, null,null);
-		//facturadetalle2.setFactura(facturaDAO.findOne(3));
-		//facturadetalleDAO.up(facturadetalle2);
+ Facturadetalle facturadetalle2 = new Facturadetalle ();
+	facturadetalle2.setFactura(facturaDAO.findOne(2));
+	facturadetalle2.setLibro(libroDAO.findOne(2));
+	facturadetalleDAO.up(facturadetalle2);
 		
 		//del BORRADO
 		//facturadetalleDAO.del(86);

@@ -2,31 +2,67 @@ package com.distribuida.entities;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
 import org.springframework.stereotype.Component;
 @Component
+@Entity
+@Table(name= "libro")
 public class Libro {
-
+	//@OneToOne
+			//@ManyToOne
+			//@OneToMany
+			@Id
+			@GeneratedValue(strategy =  GenerationType.IDENTITY)
+			@Column(name="id_libro")
 	private int idLibro;
+			@Column(name="titulo")
 	private String titulo;
+			@Column(name="editorial")
 	private String editorial;
+			@Column(name="num_paginas")
 	private int numPaginas;
+			@Column(name="edicion")
 	private String edicion;
+			@Column(name="idioma")
 	private String idioma;
+			@Column(name="fecha_publicacion")
 	private Date fechaPublicacion;
+			@Column(name="descripcion")
 	private String descripcion;
+			@Column(name="tipo_pasta")
 	private String tipoPasta;
+			@Column(name="ISBN")
 	private String ISBN;
+			@Column(name="num_ejemplares")
 	private int numEjemplares;
+			@Column(name="portada")
 	private String portada;
+			@Column(name="presentacion")
 	private String presentacion;
+			@Column(name="precio")
 	private Double precio;
+		
 	
 	// Jefferson Calapiña 
-	private Categoria categoria;
-	private Autor autor;
+	//private Categoria categoria;
+	//private Autor autor;
+			@JoinColumn(name ="id_categoria")
+			@ManyToOne(cascade= {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})//persisten y detach viene asocado con una insercion de dats
+			private Categoria categoria;
+			@JoinColumn(name ="id_autor")
+			@ManyToOne(cascade= {CascadeType.DETACH,CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH})//persisten y detach viene asocado con una insercion de dats
+			private Autor autor;
 	
-	@SuppressWarnings("unused")
-	private Libro() {
+	public Libro() {
 	
 	}
 
@@ -42,7 +78,7 @@ public class Libro {
 		this.fechaPublicacion = fechaPublicacion;
 		this.descripcion = descripcion;
 		this.tipoPasta = tipoPasta;
-		ISBN = iSBN;
+		this.ISBN = iSBN;
 		this.numEjemplares = numEjemplares;
 		this.portada = portada;
 		this.presentacion = presentacion;
@@ -128,7 +164,7 @@ public class Libro {
 	}
 
 	public void setISBN(String iSBN) {
-		ISBN = iSBN;
+		 ISBN = iSBN;
 	}
 
 	public int getNumEjemplares() {
@@ -187,6 +223,6 @@ public class Libro {
 				+ numEjemplares + ", portada=" + portada + ", presentacion=" + presentacion + ", precio=" + precio
 				+ ", categoria=" + categoria + ", autor=" + autor + "]";
 	}
-	
 
+	
 }

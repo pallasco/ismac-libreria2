@@ -20,18 +20,18 @@ public class PrincipalFactura {
 		//CRUD CREEATE READ UPDATE Y DELETE
 		ClienteDAO clienteDAO=context.getBean("clienteDAOImpl",ClienteDAO.class);
 		//add
-		Factura factura = new Factura (0,"FAC-0090",new Date(),23.36,5.36,30.68, null);
+		Factura factura = new Factura (0,"FAC-0092",new Date(),23.36,5.36,30.68, null);
 		factura.setCliente(clienteDAO.findOne(2));
-		//facturaDAO.add(factura);
+		facturaDAO.add(factura);
 		
 		//UPDATE ACTUALIZADO
 		
-		Factura factura2 = new Factura (86,"FAC-0091",new Date(),23.32,5.32,30.62, null);
-		factura2.setCliente(clienteDAO.findOne(3));
+	//	Factura factura2 = new Factura (86,"FAC-0091",new Date(),23.32,5.32,30.62, null);
+	//	factura2.setCliente(clienteDAO.findOne(3));
 		//facturaDAO.up(factura2);
 		
 		//del BORRADO
-		facturaDAO.del(86);
+	//	facturaDAO.del(86);
 		//findOne
 		
 		
