@@ -43,6 +43,7 @@ public List<Autor> findAll(){
 	public Autor findOne(int id) {
 		// TODO Auto-generated method stub
 	Session session = sessionFactory.getCurrentSession();
+	@SuppressWarnings("rawtypes")
 	Query query = session.createQuery("SELECT au FROM Autor au WHERE au.idAutor =: keyIdAutor");
 	query.setParameter("keyIdAutor", id);
 		return (Autor) query.getSingleResult();
@@ -60,6 +61,7 @@ public void add(Autor autor) {
 	public void up(Autor autor) {
 		// TODO Auto-generated method stub
 	Session session = sessionFactory.getCurrentSession();
+@SuppressWarnings("rawtypes")
 Query query = session.createQuery(" UPDATE Autor au SET au.nombre=: keyNombre" + 
 								"            , au.apellido =: keyApellido"
 								+ "             ,au.pais =: keyPais" + 
@@ -83,6 +85,7 @@ query.executeUpdate();
 	public void del(int id) {
 		// TODO Auto-generated method stub
 Session session = sessionFactory.getCurrentSession();
+@SuppressWarnings("rawtypes")
 Query query = session.createQuery("DELETE FROM Autor au WHERE au idAutor =: keyIdAutor");
 query.setParameter("keyIdAutor", id);
 query.executeUpdate();

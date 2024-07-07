@@ -18,11 +18,13 @@ public class PrincipalAutor3 {
 		
 		// CRUD CREADE, READ, UPDATE, DELETE
 		///  ADD AGREGADO
+	@SuppressWarnings("unused")
 	Autor autor = new Autor(0, "Alex","Tapia","Ecuador"," Tumbaco", "0999803876", "alex@gamil.com");
 	//autorDAO.add(autor);
 		
 		 // UP actualizacion
 		
+		@SuppressWarnings("unused")
 		Autor autor2 = new Autor(61, "Juan","Catota","Ecuador"," Lumbisi", "0999803876", "juan@gamil.com");
 		//autorDAO.up(autor2);
 		

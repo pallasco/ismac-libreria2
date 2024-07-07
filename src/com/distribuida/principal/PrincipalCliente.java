@@ -22,6 +22,7 @@ public class PrincipalCliente {
 		
 		 // UP actualizacion
 		
+		@SuppressWarnings("unused")
 		Cliente cliente3 = new Cliente(42, "05046160532", "Juan","Catota", "09998038762"," Arenal", "juan@gamil.com");
 		//clienteDAO.up(cliente2);
 		

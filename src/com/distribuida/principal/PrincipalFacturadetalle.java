@@ -24,20 +24,20 @@ public class PrincipalFacturadetalle {
 		FacturaDAO facturaDAO=context.getBean("facturaDAOImpl",FacturaDAO.class);
 		LibroDAO libroDAO=context.getBean("libroDAOImpl",LibroDAO.class);
 		//add
-		Facturadetalle facturadetalle = new Facturadetalle();
+	/*	Facturadetalle facturadetalle = new Facturadetalle(0,25,25.30,null,null);
 		facturadetalle.setFactura(facturaDAO.findOne(2));
 		facturadetalle.setLibro(libroDAO.findOne(2));
-	facturadetalleDAO.add(facturadetalle);
+	facturadetalleDAO.add(facturadetalle);*/
 			
 		//UPDATE ACTUALIZADO
 		
- Facturadetalle facturadetalle2 = new Facturadetalle ();
+ /*Facturadetalle facturadetalle2 = new Facturadetalle ();
 	facturadetalle2.setFactura(facturaDAO.findOne(2));
 	facturadetalle2.setLibro(libroDAO.findOne(2));
 	facturadetalleDAO.up(facturadetalle2);
-		
+		*/
 		//del BORRADO
-		//facturadetalleDAO.del(86);
+		facturadetalleDAO.del(210);
 		//findOne
 		
 		

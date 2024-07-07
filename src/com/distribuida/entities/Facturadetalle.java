@@ -15,14 +15,14 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Entity
-@Table(name= "facturadetalle")
+@Table(name= "factura_detalle")
 public class Facturadetalle {
 	//@OneToOne
 			//@ManyToOne
 			//@OneToMany
 			@Id
 			@GeneratedValue(strategy =  GenerationType.IDENTITY)
-	@Column(name ="id_facturadetalle")
+	@Column(name ="id_factura_detalle")
 	private int idfacturadetalle;
 			@Column(name="cantidad")
 	private int cantidad;
