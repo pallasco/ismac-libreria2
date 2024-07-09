@@ -17,37 +17,45 @@ import com.distribuida.entities.Categoria;
 public class CategoriaDAOImpl implements CategoriaDAO{
 	@Autowired
 	private SessionFactory sessionFactory;
+
 	@Override
 	@Transactional
 	public List<Categoria> findAll(){
 		Session session =sessionFactory.getCurrentSession();
-		return session.createQuery("from Categoria", Categoria.class).getResultList();
+		return session.createQuery("from Categoria",Categoria.class).getResultList();
 	}
 	
-
+	 @Override
+	 @Transactional 
 	public Categoria findOne(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		Session session = sessionFactory.getCurrentSession();
+		return session.get(Categoria.class, id);
 	}
-
 	@Override
+	@Transactional
 	public void add(Categoria categoria) {
 		// TODO Auto-generated method stub
-
+		Session session =sessionFactory.getCurrentSession();
+		session.saveOrUpdate(categoria);
+ 
 	}
-
 	@Override
+	@Transactional
 	public void up(Categoria categoria) {
 		// TODO Auto-generated method stub
-
+		Session session =sessionFactory.getCurrentSession();
+		session.saveOrUpdate(categoria);
 	}
-
 	@Override
+	@Transactional
 	public void del(int id) {
 		// TODO Auto-generated method stub
-
+		Session session =sessionFactory.getCurrentSession();
+		session.delete(findOne(id));
 	}
 	@Override
+	@Transactional
 	public List<Categoria> fidAll() {
 		// TODO Auto-generated method stub
 		return null;
